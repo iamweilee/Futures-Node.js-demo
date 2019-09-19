@@ -1,6 +1,8 @@
 {
     "huobi": {
-        "ws_url_prex": "wss://www.hbdm.com/ws"
+        "accessKey": "42f49e89-1c6d16e7-dqnh6tvdf3-a6449",
+        "secretKey": "d3a01abc-b85137b6-cd49da36-9f64f",
+        "ws_url_prex": "wss://api.huobi.pro/ws/v1"
     },
     "ws_interfaces": {
         "ws_sub": [

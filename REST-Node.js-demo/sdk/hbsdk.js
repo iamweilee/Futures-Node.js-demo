@@ -5,7 +5,11 @@ var moment = require('moment');
 var HmacSHA256 = require('crypto-js/hmac-sha256')
 var http = require('../framework/httpClient');
 var url = require('url');
-var config = require('config');
+
+const HttpsProxyAgent = require('https-proxy-agent');
+
+let proxy = { host: '127.0.0.1', port: 49936 };
+let agent = new HttpsProxyAgent('socks://127.0.0.1:49936');
 
 // const URL = 'https://api.huobipro.com';
 
@@ -45,7 +49,8 @@ function get_body() {
 function call_get(tip, path){
     http.get(path, {
         timeout: 1000,
-        headers: DEFAULT_HEADERS
+        headers: DEFAULT_HEADERS,
+        proxy
     }).then(data => {
         let json = JSON.parse(data);
         if (json.status == 'ok') {
@@ -64,7 +69,8 @@ function call_post(tip, path, payload, body){
     var payloadPath = `${path}?${payload}`;
         http.post(payloadPath, body, {
             timeout: 1000,
-            headers: DEFAULT_HEADERS
+            headers: DEFAULT_HEADERS,
+            proxy
         }).then(data => {
             let json = JSON.parse(data);
             if (json.status == 'ok') {

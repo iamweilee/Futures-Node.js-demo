@@ -1,7 +1,7 @@
 {
     "huobi": {
-        "api_key": "----your api key here----",
-        "secret_key": "----your secret key here----",
+        "api_key": "42f49e89-1c6d16e7-dqnh6tvdf3-a6449",
+        "secret_key": "d3a01abc-b85137b6-cd49da36-9f64f",
         "url_prex": "https://api.hbdm.com"
     },
     "interfaces": {
