@@ -50,7 +50,7 @@ function call_get(tip, path){
     http.get(path, {
         timeout: 1000,
         headers: DEFAULT_HEADERS,
-        proxy
+        // proxy
     }).then(data => {
         let json = JSON.parse(data);
         if (json.status == 'ok') {
@@ -70,7 +70,7 @@ function call_post(tip, path, payload, body){
         http.post(payloadPath, body, {
             timeout: 1000,
             headers: DEFAULT_HEADERS,
-            proxy
+            // proxy
         }).then(data => {
             let json = JSON.parse(data);
             if (json.status == 'ok') {
